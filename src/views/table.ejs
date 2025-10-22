@@ -1,4 +1,3 @@
-<% layout('layout') -%>
 <% if (typeof subtitle !== 'undefined') { %>
   <h5 class="text-muted mb-3"><%= subtitle %></h5>
 <% } %>
@@ -7,8 +6,7 @@
   <table class="table table-striped table-bordered align-middle">
     <thead>
       <tr>
-        <% if (rows && rows.length) {
-             Object.keys(rows[0]).forEach(k => { %>
+        <% if (rows && rows.length) { Object.keys(rows[0]).forEach(k => { %>
           <th><%= k %></th>
         <% }); } %>
       </tr>

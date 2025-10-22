@@ -1,12 +1,18 @@
 -- 01_load_csv.sql
--- Chemin local à adapter selon ta machine
 USE PaysG20;
 
--- Exemple si les entêtes du CSV sont: Pays,NbHab,Capitale,DensitePop,PIB,dejaVisite,Commentaires
-LOAD DATA LOCAL INFILE 'C:/path/vers/pays.csv'
+LOAD DATA LOCAL INFILE 'C:/Users/samis/OneDrive/Desktop/pays.csv'
 INTO TABLE CaracPays
 CHARACTER SET utf8
-FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
 IGNORE 1 LINES
-(Pays, NbHab, Capitale, DensitePop, PIB, dejaVisite, Commentaires);
+(@Pays, @NbHab, @Capitale, @DensitePop, @PIB, @dejaVisite, @Commentaires)
+SET
+  Pays        = NULLIF(@Pays, ''),
+  NbHab       = NULLIF(@NbHab, ''),
+  Capitale    = NULLIF(@Capitale, ''),
+  DensitePop  = NULLIF(REPLACE(@DensitePop, ',', '.'), ''),
+  PIB         = NULLIF(NULLIF(@PIB, ''), 'N'),
+  dejaVisite  = NULLIF(@dejaVisite, ''),
+  Commentaires= NULLIF(@Commentaires, '');

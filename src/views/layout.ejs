@@ -1,15 +1,40 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <%- include('partials/_head') %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title><%= title ? title + ' · PaysG20' : 'PaysG20' %></title>
+
+    <!-- Bootstrap 5 (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    >
   </head>
   <body class="bg-light">
-    <%- include('partials/_nav') %>
-    <main class="container py-4">
-      <h1 class="mb-3"><%= title %></h1>
+    <nav class="navbar navbar-expand-lg bg-white border-bottom">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="/">PaysG20</a>
+        <div class="d-flex gap-2">
+          <a class="btn btn-outline-primary btn-sm" href="/requete1">Req1</a>
+          <a class="btn btn-outline-primary btn-sm" href="/requete2">Req2</a>
+          <a class="btn btn-outline-primary btn-sm" href="/requete3">Req3</a>
+          <a class="btn btn-outline-primary btn-sm" href="/requete4">Req4</a>
+          <a class="btn btn-outline-primary btn-sm" href="/requete5">Req5</a>
+          <a class="btn btn-outline-primary btn-sm" href="/requete6">Req6</a>
+          <a class="btn btn-success btn-sm" href="/insert">Insert</a>
+          <a class="btn btn-danger btn-sm" href="/delete">Delete</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ICI, express-ejs-layouts injecte ta vue -->
+    <main>
       <%- body %>
     </main>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"></script>
   </body>
 </html>

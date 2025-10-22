@@ -1,0 +1,29 @@
+{
+  "name": "lab6",
+  "version": "1.0.0",
+  "description": "Laboratoire 6 - (Node + MariaDB)",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "mysql2": "^3.15.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sami12222/lab6.git"
+  },
+  "keywords": [],
+  "author": "Sami Abdelkhalek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sami12222/lab6/issues"
+  },
+  "homepage": "https://github.com/sami12222/lab6#readme"
+}

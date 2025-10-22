@@ -1,0 +1,28 @@
+# === Node.js ===
+node_modules/
+.env
+
+# === Logs & cache ===
+logs/
+*.log
+*.tmp
+
+# === IDE / éditeur ===
+.vscode/
+.idea/
+
+# === Système ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# === Build / temp ===
+dist/
+build/
+.cache/
+tmp/
+
+# === Autres ===
+*.bak
+*.old
+*.orig
