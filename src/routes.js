@@ -133,3 +133,18 @@ router.post('/delete', async (req, res) => {
 });
 
 module.exports = router;
+
+// ====== VISUALISER TOUTE LA TABLE ======
+router.get('/data', async (req, res) => {
+  try {
+    const [rows] = await pool.query('SELECT * FROM CaracPays ORDER BY id ASC');
+    res.render('table', {
+      title: 'Toutes les données',
+      subtitle: 'Table CaracPays complète',
+      rows
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Erreur lors du chargement des données.');
+  }
+});
